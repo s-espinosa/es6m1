@@ -1,8 +1,8 @@
 class OffsetCalculator {
   calculate(date) {
-    let month = (date.getUTCMonth() + 1)
-    const day   = date.getUTCDate().toString()
-    const year  = date.getUTCFullYear().toString().substr(2,2)
+    let month  = (date.getUTCMonth() + 1)
+    const day  = date.getUTCDate().toString()
+    const year = date.getUTCFullYear().toString().substr(2,2)
 
     if(month.toString().length === 1) {
       month = "0" + month.toString()
