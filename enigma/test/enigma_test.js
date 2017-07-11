@@ -6,10 +6,10 @@ describe('Enigma', () => {
   it('can encrypt a message', () => {
     const e       = new Enigma()
     const message = "hello"
-    const key     = 12345
+    const key     = '12345'
     const date    = new Date('2017-01-15')
 
-    expect(e.encrypt(message, 12345, new Date('2017-01-15'))).to.equal('')
+    expect(e.encrypt(message, '12345', new Date('2017-01-15'))).to.equal('w7;G3')
   })
 
   it('can encrypt message without a key or date', () => {
@@ -22,23 +22,23 @@ describe('Enigma', () => {
   it('can decrypt a message', () => {
     const e = new Enigma()
     const message = "hello"
-    const encrypted = e.encrypt(message, 12345, new Date('2017-01-15'))
+    const encrypted = e.encrypt(message, '12345', new Date('2017-01-15'))
 
-    expect(e.decrypt(encrypted, 12345, new Date('2017-01-15'))).to.equal(message)
+    expect(e.decrypt(encrypted, '12345', new Date('2017-01-15'))).to.equal(message)
   })
 
   it('can decrypt without a date', () => {
     const e = new Enigma()
     const message = "hello"
-    const encrypted = e.encrypt(message, 12345)
+    const encrypted = e.encrypt(message, '12345')
 
-    expect(e.decrypt(encrypted, 12345)).to.equal(message)
+    expect(e.decrypt(encrypted, '12345')).to.equal(message)
   })
 
   it('can crack a message', () => {
     const e = new Enigma()
     const message = "hello ..end.."
-    const encrypted = e.encrypt(message, 12345, new Date('2017-01-15'))
+    const encrypted = e.encrypt(message, '12345', new Date('2017-01-15'))
 
     expect(e.crack(encrypted, new Date('2017-01-15'))).to.equal(message)
   })
