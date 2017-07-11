@@ -14,7 +14,7 @@ class OffsetCalculator {
     const squaredString = squared.toString()
     const lastFour      = squaredString.substring(squaredString.length - 4)
     const lastStrings   = lastFour.split("")
-    const lastDigits    = lastStrings.map(function(number) {
+    const lastDigits    = lastStrings.map((number) => {
       return parseInt(number)
     })
 
@@ -23,4 +23,3 @@ class OffsetCalculator {
 }
 
 module.exports = OffsetCalculator
-

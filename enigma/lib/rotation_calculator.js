@@ -7,11 +7,10 @@ class RotationCalculator {
 
     const rotations = [a, b, c, d]
 
-    return rotations.map(function(number) {
+    return rotations.map((number) => {
       return parseInt(number)
     })
   }
 }
 
 module.exports = RotationCalculator
-
